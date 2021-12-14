@@ -4758,7 +4758,7 @@ item.sbone.desc='Brittle bone of some animal';
 item.sbone.stype = 5;
 item.sbone.use = function(){msg('You rattle the bone')}
 item.sbone.onGet=function(){
-  if(this.amount>=50) {giveRcp(rcp.bdl1); this.onGet=function(){}}
+  if(this.amount>=10) {giveRcp(rcp.bdl1); this.onGet=function(){}}
 }
 
 item.death_b = new Item(); item.death_b.id = 5001;
@@ -4773,9 +4773,9 @@ item.sstraw.desc='This fell out of a dummy when you punched it to death';
 item.sstraw.stype=5;
 item.sstraw.use=function(){msg('You put one in your mouth...');}
 item.sstraw.onGet=function(){
-  if(this.amount>=30) giveRcp(rcp.strwks); 
-  if(this.amount>=40) giveRcp(rcp.wvbkt); 
-  if(this.amount>=50) {giveRcp(rcp.sdl1); this.onGet=function(){}}
+  if(this.amount>=20) giveRcp(rcp.strwks); 
+  if(this.amount>=30) giveRcp(rcp.wvbkt); 
+  if(this.amount>=40) {giveRcp(rcp.sdl1); this.onGet=function(){}}
 }
 
 item.d6 = new Item(); item.d6.id = 5003;
