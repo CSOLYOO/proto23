@@ -2590,7 +2590,7 @@ item.brd.use = function(){
 item.brd.onChange=function(x,y){if(y) return [item.spb,x]; giveItem(item.spb,x)}
 
 item.crrt = new Item(); item.crrt.id = 3;
-item.crrt.name='Carrot'; item.crrt.val = 5
+item.crrt.name='Carrot'; item.crrt.val = 20
 item.crrt.desc='It gets very sweet when boiled'+dom.dseparator+'Restores<span style=\'color:lime\'> '+item.crrt.val+' </span>energy';
 item.crrt.stype = 4; 
 item.crrt.use = function(){
@@ -2630,7 +2630,7 @@ item.mlkn.use = function(){
 }
 
 item.rwmt1 = new Item(); item.rwmt1.id = 7;
-item.rwmt1.name='Raw Meat'; item.rwmt1.val = 11;
+item.rwmt1.name='Raw Meat'; item.rwmt1.val = 20;
 item.rwmt1.desc='Edible part of some animal, has to be cooked before consumption'+dom.dseparator+'Restores<span style=\'color:lime\'> '+item.rwmt1.val+' </span>energy';
 item.rwmt1.stype = 4; item.rwmt1.rot = [.25,.45,.1,.2]
 item.rwmt1.onGet=function(){
@@ -2891,7 +2891,7 @@ item.pnpl.use = function(){
 }
 
 item.rsmt = new Item(); item.rsmt.id = 35;
-item.rsmt.name='Roasted Meat'; item.rsmt.val = 15; item.rsmt.rot = [.1,.25,.05,.15]
+item.rsmt.name='Roasted Meat'; item.rsmt.val = 40; item.rsmt.rot = [.1,.25,.05,.15]
 item.rsmt.desc='Simple slab of meat, roasted on an open fire without any seasoning. Tastes pretty good nonetheless'+dom.dseparator+'Restores<span style=\'color:lime\'> '+item.rsmt.val+' </span>energy'; 
 item.rsmt.stype = 4; 
 item.rsmt.use = function(){
