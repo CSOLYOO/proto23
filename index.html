@@ -4741,6 +4741,16 @@ item.klngbr.use = function(){
   this.amount--; dom.d5_3_1.update(); msg('Restored '+this.val+' energy','lime');
 }
 
+item.gel = new Item(); item.gel.id = 223;
+item.gel.name='gel'; item.gel.val = 5;
+item.gel.desc='Juicy gel which can fed the starve.'+dom.dseparator+'Restores<span style=\'color:lime\'> '+item.gel.val+' </span>energy';
+item.gel.stype = 4; 
+item.gel.use = function(){
+  you.sat+this.val>you.satmax?you.sat=you.satmax:you.sat+=this.val;
+  this.amount--; dom.d5_3_1.update(); skl.glt.use(2); global.stat.fooda++;
+  msg('Restored '+this.val+' energy','lime');
+}
+
 
 item.sbone = new Item(); item.sbone.id = 5000;
 item.sbone.name='Small Bone';
@@ -5591,15 +5601,6 @@ item.jnlbk.use = function(){if(canRead()){if(this.data.timep>=this.cmax){ msg('J
 }else chss.trd.sl(this);}
 }
 
-item.gel = new Item(); item.gel.id = 10001;
-item.gel.name='gel'; item.gel.val = 5;
-item.gel.desc='Juicy gel which can fed the starve.'+dom.dseparator+'Restores<span style=\'color:lime\'> '+item.gel.val+' </span>energy';
-item.gel.stype = 4; 
-item.gel.use = function(){
-  you.sat+this.val>you.satmax?you.sat=you.satmax:you.sat+=this.val;
-  this.amount--; dom.d5_3_1.update(); skl.glt.use(2); global.stat.fooda++;
-  msg('Restored '+this.val+' energy','lime');
-}
 
 
 ///////////////////////////////////////////
