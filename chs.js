@@ -1842,8 +1842,8 @@ var cnPrefix = {
     "\"Sell 1 piece\"": "卖出1份",
     "\"Sell 5 piece\"": "卖出5份",
     "\"Sell 10 piece\"": "卖出10份",
-    "": "",
-    "": "",
+    "gel": "凝胶",
+    "Juicy gel which can fed the starve.": "可供果腹的可口凝胶",
     "": "",
 }
 
