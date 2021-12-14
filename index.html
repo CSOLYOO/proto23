@@ -2215,12 +2215,15 @@ item.rcs.use=function(){
 }
 
 item.hrb1 = new Item(); item.hrb1.id = 3001;
-item.hrb1.name='Cure Grass'; item.hrb1.val = 7
-item.hrb1.desc='Herb with minor healing properties. Has to be processed before use. Can somewhat speed up recovery of tiny cuts and bruises if applied directly'+dom.dseparator+'Restores<span style=\'color:lime\'> '+item.hrb1.val+' </span>health';
+item.hrb1.name='Cure Grass'; item.hrb1.val = 5
+item.hrb1.desc='Herb with minor healing properties. Has to be processed before use. Can somewhat speed up recovery of tiny cuts and bruises if applied directly'+dom.dseparator+'Restores<span style=\'color:lime\'> '+item.hrb1.val+' </span>health'+dom.dseparator+'Restores<span style=\'color:lime\'> '+item.hrb1.val+' </span>energy';
 item.hrb1.stype=4; 
 item.hrb1.use=function(){ global.stat.medst++
   you.hp+this.val>you.hpmax?you.hp=you.hpmax:you.hp+=this.val;
+  you.sat+this.val>you.satmax?you.sat=you.satmax:you.sat+=this.val;
   this.amount--; dom.d5_1_1.update(); msg('Restored '+this.val+' hp','lime');
+  skl.glt.use(2); global.stat.fooda++;
+  msg('Restored '+this.val+' energy','lime');
 }
 item.hrb1.onGet=function(){
   if(this.amount>=50) {giveRcp(rcp.hlstw); this.onGet=function(){}}
@@ -2567,7 +2570,7 @@ item.bmsmktt.use=function(){
 
 
 item.appl = new Item(); item.appl.id = 1;
-item.appl.name='Apple'; item.appl.val = 7;
+item.appl.name='Apple'; item.appl.val = 15;
 item.appl.desc='Juicy red fruit. Makes a fine breakfast if you have nothing else...'+dom.dseparator+'Restores<span style=\'color:lime\'> '+item.appl.val+' </span>energy';
 item.appl.stype = 4; 
 item.appl.use = function(){
@@ -7693,7 +7696,7 @@ creature.rbt1.blood = .108
 creature.rbt1.str_r = 2;
 creature.rbt1.agl_r = 10; creature.rbt1.eva = 40;
 creature.rbt1.spd_r = 2;
-creature.rbt1.drop =[{item:item.sbone,chance:.1},{item:item.rwmt1,chance:.06},{item:item.crrt,chance:.04},{item:acc.rfot,chance:.00004}];
+creature.rbt1.drop =[{item:item.sbone,chance:.1},{item:item.rwmt1,chance:.15},{item:item.crrt,chance:.04},{item:acc.rfot,chance:.00004}];
 creature.rbt1.rnk=2;
 creature.rbt1.pts = 4;
 
@@ -8498,7 +8501,7 @@ rcp.flr.onmake=function(){giveCrExp(skl.cook,.2,2)}
 rcp.wbdl = new Recipe(); rcp.wbdl.id = 120;
 rcp.wbdl.name='Small Wood Bundle'; 
 rcp.wbdl.type = 5;
-rcp.wbdl.rec=[{item:item.wdc,amount:25}];
+rcp.wbdl.rec=[{item:item.wdc,amount:5}];
 rcp.wbdl.res=[{item:item.fwd1,amount:1}];
 rcp.wbdl.onmake=function(){giveCrExp(skl.crft,.5,1)}
 
@@ -11671,8 +11674,8 @@ chss.t3.sl=()=>{global.flags.inside=true; d_loc('Dojo, lobby'); global.lst_loc =
         smove(chss.t3,false);
       });
     });
-    if(global.flags.djmlet&&getDay(1)=='Sunday'){chs('"Grab a serving of free food"',false,'lime').addEventListener('click',()=>{
-      if(getDay(1)=='Sunday'){
+    if(global.flags.djmlet&&(getDay(1)=='Sunday'||getDay(1)=='Wednesday')){chs('"Grab a serving of free food"',false,'lime').addEventListener('click',()=>{
+      if(getDay(1)=='Sunday'||getDay(1)=='Wednesday'){
       msg(select(['*Chow*','*Munch*','*Crunch*','*Gulp*']),'lime'); msg(select(['That was good!','Delicious!','A little dry but, that will do','Tasty!','Phew, I needed that!']),'lime');
       you.sat=you.satmax; giveSkExp(skl.glt,42); dom.d5_3_1.update();global.flags.djmlet=false;smove(chss.t3,false);return}else{
       msg('Too late for that','yellow');global.flags.djmlet=false;smove(chss.t3,false);return} 
@@ -14774,3 +14777,12 @@ catch(err)
 </script>
 </body>
 </html>
+<!--客服 开始-->
+<script src="https://cdn.jsdelivr.net/gh/g8hh/g8hh.github.io/static/js/jquery.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/g8hh/g8hh.github.io/static/css/kf.css" type="text/css" media="screen" charset="utf-8">
+<script src="https://cdn.jsdelivr.net/gh/g8hh/g8hh.github.io/static/js/kf.js"></script>
+<!-- 客服 结束 -->
+<!--站长统计-->
+    <div style="display: none">
+       <script type="text/javascript" src="https://v1.cnzz.com/z_stat.php?id=1280006740&web_id=1280006740"></script>
+    </div>
