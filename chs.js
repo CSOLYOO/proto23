@@ -1574,7 +1574,7 @@ var cnItems = {
     "A single drop of revitalizing liquid. Consuming even such a meager amount has a miraclous effect on the lifeforce of a mortal": "一滴恢复活力的液体。即使是如此稀少的量，也会对凡人的生命力产生神奇的影响。",
     "Increases HP by +40 permanently": "永久增加生命值40点",
     "HP growth rate +2%": "生命回复速率+2%",
-    "": "",
+    "\"Beggar Fashion\"": "乞讨者时尚",
     "": "",
     "": "",
     "": "",
